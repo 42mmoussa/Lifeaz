@@ -23,3 +23,16 @@ services:
       - 5000:5000
     entrypoint: "yarn dev"
     working_dir: /app
+
+  front:
+    volumes:
+      - ./front/:/app/
+      - /app/node_modules
+      - /app/dist
+    restart: always
+    build: ./front/
+    image: front
+    ports:
+      - 80:4200
+    entrypoint: "yarn start"
+    working_dir: /app
