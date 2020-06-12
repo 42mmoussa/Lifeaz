@@ -4,17 +4,18 @@ import interventionDB, {IInterventionPage} from "../../db/intervention"
 const router: Router = Router()
 
 /**
- * GET /inspection
+ * GET /inspections
  * Send inspections list, page number, total number of pages, number of elements in a page
  *
  * @query page: number
  * @query nb_element?: number
  *
- * example: domaine.com/inscpection/?page=2&nb_element=10
+ * example: domaine.com/inspections/?page=2&nb_element=10
  *
  */
 export default router.get('/', async(req: Request, res: Response) => {
     try {
+        // get queries
         const page: number = Number(req.query.page)
         const nbElement: number = req.query.nb_element && !isNaN(Number(req.query.nb_element)) ? Number(req.query.nb_element) : 5
 
@@ -29,6 +30,7 @@ export default router.get('/', async(req: Request, res: Response) => {
         if (interventions.pageElement.length == 0) {
             return res.redirect(req.baseUrl + '/?page=1')
         }
+
         return res.status(200).json(interventions)
     } catch (e) {
         res.status(500).send(e.message)

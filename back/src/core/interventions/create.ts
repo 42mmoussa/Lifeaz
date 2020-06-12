@@ -1,9 +1,12 @@
 import {Router, Request, Response} from 'express'
-import InterventionDB from "../../db/intervention"
+import InterventionDB, {IIntervention} from "../../db/intervention"
+import {sortWordsOfText} from "../utils/sort"
+import alphaIntervention from "../../db/alphaIntervention";
 
 const router: Router = Router()
 
 /**
+ * POST /inspections
  * Create a new intervention in the database
  *
  * @query type
@@ -20,7 +23,10 @@ export default router.post('/', async(req: Request, res: Response) => {
             throw new Error("Error: Missing argument")
         }
 
-        await InterventionDB.create(type, author, content, title, avatar)
+        const createdIntervention: IIntervention = await InterventionDB.create(type, author, content, title, avatar)
+
+        const contentSorted: string = await sortWordsOfText(content)
+        await alphaIntervention.create(createdIntervention.idintervention, contentSorted)
 
         return res.status(200).send("Success")
     } catch (e) {

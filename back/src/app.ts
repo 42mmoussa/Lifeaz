@@ -9,14 +9,11 @@ app.use(express.json())
 
 // Routes
 
-import getInterventions from "./core/interventions/Get"
+import getInterventions from "./core/interventions/get"
 app.use('/interventions', getInterventions)
 
-import createInterventions from "./core/interventions/Create"
+import createInterventions from "./core/interventions/create"
 app.use('/interventions', createInterventions)
-
-// get all interventions -- GET /interventions
-// post create intervention and sort words of content -- POST /interventions
 
 // create user => POST /sigin
 // login => POST /login

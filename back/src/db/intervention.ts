@@ -1,6 +1,16 @@
 import pool from "./Pool"
 import {Query} from 'pg'
 
+export interface IIntervention {
+    idintervention?: number
+    type: string
+    author: string
+    content: string
+    title: string
+    date: string
+    avatar: string
+}
+
 export interface IInterventionPage {
     totalNbPage: number
     currentpage: number
@@ -22,13 +32,13 @@ export default class Intervention {
      * @param title: string
      * @param avatar: string
      *
-     * @return Promise<object[]>
+     * @return Promise<IIntervention>
      */
-    static async create(type: string, author: string, content: string, title: string, avatar: string): Promise<object[]> {
+    static async create(type: string, author: string, content: string, title: string, avatar: string): Promise<IIntervention> {
         return (await pool.query(
             "INSERT INTO intervention (type, author, content, title, avatar) VALUES ($1, $2, $3, $4, $5) RETURNING *",
             [type, author, content, title, avatar]
-        )).rows
+        )).rows[0]
     }
 
     /**
