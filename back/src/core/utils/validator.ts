@@ -1,4 +1,4 @@
-export const validateSignin = async(opt: {type: string, author: string, content: string, title: string, avatar: string}): Promise<string[]> => {
-    console.log(opt)
-    return ["ok", "lplp"]
+export const validateEmail = (email: string): boolean => {
+    const reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return reg.test(email)
 }
