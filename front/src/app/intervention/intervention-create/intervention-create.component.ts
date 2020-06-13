@@ -1,15 +1,19 @@
-import {Component} from "@angular/core"
+import { Component } from "@angular/core"
 
 @Component({
-  selector: 'app-intervention-create',
-  templateUrl: './intervention-create.component.html'
+  selector: "app-intervention-create",
+  templateUrl: "./intervention-create.component.html",
+  styleUrls: ["./intervention-create.component.css"]
 })
 
 export class InterventionCreateComponent {
-  enteredValue = ""
-  newIntervention = 'NO CONTENT'
+  enteredContent = ""
+  enteredTitle = ""
 
   onAddIntervention() {
-    this.newIntervention = this.enteredValue
+    const intervention = {
+      title: this.enteredTitle,
+      content: this.enteredContent
+    }
   }
 }

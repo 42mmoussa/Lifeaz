@@ -24,10 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-thems/indigo-pink.css"
-              },
-              "src/custom-theme.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -92,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -127,6 +125,6 @@
   },
   "defaultProject": "front",
   "cli": {
-    "analytics": "20ec6d37-b375-4551-829e-228a560ce074"
+    "analytics": false
   }
 }
