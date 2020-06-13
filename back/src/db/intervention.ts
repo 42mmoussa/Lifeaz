@@ -34,10 +34,13 @@ export default class Intervention {
      *
      * @return Promise<IIntervention>
      */
-    static async create(type: string, author: string, content: string, title: string, avatar: string): Promise<IIntervention> {
+    static async create(type: string, author: string, content: string, title: string, avatar: string, date?: string | Date): Promise<IIntervention> {
+        if (!date) {
+            date = new Date()
+        }
         return (await pool.query(
-            "INSERT INTO intervention (type, author, content, title, avatar) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-            [type, author, content, title, avatar]
+            "INSERT INTO intervention (type, author, content, title, avatar, date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+            [type, author, content, title, avatar, date]
         )).rows[0]
     }
 

@@ -3,6 +3,7 @@ import cors from "cors";
 
 import createInterventions from "./core/interventions/create";
 import getInterventions from "./core/interventions/get";
+import {initDB} from "./script/initDB";
 
 const app: Application = express();
 
@@ -15,4 +16,7 @@ app.use(express.urlencoded({extended: false}));
 app.use('/interventions', getInterventions);
 app.use('/interventions', createInterventions);
 
-app.listen(5000, () => { console.log('Server running on port 5000') });
+app.listen(5000, async () => {
+    await initDB()
+    console.log('Server running on port 5000')
+});

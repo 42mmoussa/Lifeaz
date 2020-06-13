@@ -1,20 +1,24 @@
+
+/**
+ * grid
+ */
+
 .container {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border: red solid;
+  display: flex;
+  height: 800px;
 }
 
 .interventions {
-  border: green solid;
-  min-width: 768px;
+  min-width: 800px;
   max-width: 1000px;
   margin: auto;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
+  grid-auto-columns: auto;
+  grid-template-rows: fit-content(100%);
+  grid-column-gap: 10px;
   grid-row-gap: 10px;
+  transition: all 0.5s ease-out;
 }
 
 .intervention1 { grid-area: 1 / 1 / 2 / 2; }
@@ -24,22 +28,107 @@
 .intervention5 { grid-area: 2 / 3 / 3 / 4; }
 
 .interventions > .intervention {
-  width: 256px;
+  min-width: 256px;
+  max-width: 300px;
+  padding: 20px;
 }
 
-@media only screen and (max-width: 880px) {
+.grid-content {
+  padding: 20px;
+}
+
+/* responsive */
+@media only screen and (max-width: 900px) {
+  .container {
+    height: auto;
+  }
+
   .interventions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: baseline;
-    flex-direction: column;
+    display: inline-block;
+    width: 100%;
+    min-width: auto;
+    max-width: 600px;
   }
 
   .interventions > .intervention {
-    width: auto;
-    align-self: stretch;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
   }
+}
 
+/**
+ * Content
+ */
+
+.type {
+  margin: 5px 0;
+  font-size: 11px;
+}
+
+.title {
+  margin: 3px 0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.content {
+  font-size: 13px;
+}
+
+.user {
+  float: left;
+  margin-left: 10px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.avatar {
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.username {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.date {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.date-container {
+  margin-right: 10px;
+  float: right;
+}
+
+.bottom-grid {
+  height: 40px;
+}
+
+.bottom-grid > div {
+  height: 100%;
+}
+
+p, h2 {
+  font-family: Avenir-Heavy,Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
 }

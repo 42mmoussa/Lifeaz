@@ -1,43 +1,23 @@
-<div class="container">
-  <div class="interventions" *ngIf="interventions.length > 0">
+<div class="container" *ngIf="interventions.length > 0">
+  <div class="interventions">
 
-    <div class="intervention intervention1">
+    <div
+      *ngFor="let intervention of interventions; let i = index"
+      class="intervention intervention{{ i + 1 }}"
+    >
       <div class="grid-content">
-        <h2 class="title">{{ interventions[0].title }}</h2>
-        <p>{{ interventions[0].type }}</p>
-        <p>{{ interventions[0].content }}</p>
+        <p class="type">{{ intervention.type.toUpperCase() }}</p>
+        <h2 class="title">{{ intervention.title.toUpperCase() }}</h2>
+        <p class="content">{{ intervention.content }}</p>
       </div>
-    </div>
-
-    <div class="intervention intervention2" *ngIf="interventions[1]">
-      <div class="grid-content">
-        <h2 class="title">{{ interventions[1].title }}</h2>
-        <p>{{ interventions[1].type }}</p>
-        <p>{{ interventions[1].content }}</p>
-      </div>
-    </div>
-
-    <div class="intervention intervention3" *ngIf="interventions[2]">
-      <div class="grid-content">
-        <h2 class="title">{{ interventions[2].title }}</h2>
-        <p>{{ interventions[2].type }}</p>
-        <p>{{ interventions[2].content }}</p>
-      </div>
-    </div>
-
-    <div class="intervention intervention4" *ngIf="interventions[3]">
-      <div class="grid-content">
-        <h2 class="title">{{ interventions[3].title }}</h2>
-        <p>{{ interventions[3].type }}</p>
-        <p>{{ interventions[3].content }}</p>
-      </div>
-    </div>
-
-    <div class="intervention intervention5" *ngIf="interventions[4]">
-      <div class="grid-content">
-        <h2 class="title">{{ interventions[4].title }}</h2>
-        <p>{{ interventions[4].type }}</p>
-        <p>{{ interventions[4].content }}</p>
+      <div class="bottom-grid">
+        <div class="user">
+          <div class="avatar" [ngStyle]="{'background-image':'url(' + intervention.avatar + ')'}"></div>
+          <p class="username">{{ intervention.author }}</p>
+        </div>
+        <div class="date-container">
+          <p class="date">{{ durationinterventions[i] }}</p>
+        </div>
       </div>
     </div>
 

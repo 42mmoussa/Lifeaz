@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {IIntervention} from "../../../interface/intervention.interface";
+import {IIntervention} from "../../../lib/interface/intervention.interface";
+import {getDateDiff} from "../../../lib/utils/date";
 
 @Component({
   selector: 'app-intervention-list-body',
@@ -8,21 +9,23 @@ import {IIntervention} from "../../../interface/intervention.interface";
 })
 export class InterventionListBodyComponent {
 
-  public breakpoint: number
-  public height: number
   @Input()
   public interventions: IIntervention[];
+
+  public durationinterventions: string[] = [];
 
   constructor() {
   }
 
-  ngOnInit(): void {
-    this.breakpoint = (window.innerWidth <= 768) ? 100 : 70;
+  async ngOnInit(): Promise<void> {
+    for (let intervention of this.interventions) {
+      let duration = await getDateDiff(intervention.date)
+      this.durationinterventions.push(duration)
+    }
   }
 
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 768) ? 100 : 70;
-    this.height = event.target.innerHeight;
+  counter(i: number): number[] {
+    return new Array(i);
   }
 
 }

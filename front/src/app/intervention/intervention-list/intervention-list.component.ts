@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {IPagination} from "../../interface/pagination.interface";
+import {IPagination} from "../../lib/interface/pagination.interface";
 
 @Component({
   selector: 'app-intervention-list',

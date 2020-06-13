@@ -4,6 +4,6 @@ export interface IIntervention {
   author: string;
   content: string;
   title: string;
-  data: string;
+  date: string;
   avatar: string;
 }
