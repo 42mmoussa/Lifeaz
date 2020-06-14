@@ -2,20 +2,21 @@ import pool from "./Pool"
 import {Query} from 'pg'
 
 export interface IIntervention {
-    idintervention?: number
-    type: string
-    author: string
-    content: string
-    title: string
-    date: string
-    avatar: string
+    idintervention?: number;
+    type: string;
+    author: string;
+    content: string;
+    title: string;
+    date: string;
+    avatar: string;
 }
 
 export interface IInterventionPage {
-    totalNbPage: number
-    currentPage: number
-    nbElements: number
-    pageElement: object[]
+    totalNbPage: number;
+    currentPage: number;
+    nbElementsPerPage: number;
+    totalNbElement: number;
+    pageElement: IIntervention[];
 }
 
 /**
@@ -45,6 +46,17 @@ export default class Intervention {
     }
 
     /**
+     * Return the number of interventions in the db
+     *
+     * return Promise<number>
+     */
+    static async getNbIntervention(): Promise<number> {
+        const result: Query = await pool.query("SELECT COUNT(*) as count_res FROM intervention")
+        const nbTotalInterventions = result.rows[0].count_res
+        return Number(nbTotalInterventions)
+    }
+
+    /**
      * Returns the total number of page based on the number of elements to display in 1 page
      *
      * @param nbElements: number
@@ -52,9 +64,7 @@ export default class Intervention {
      * @return Promise<number>
      */
     static async getNbPage(nbElements: number): Promise<number> {
-        const totalNbInterventions: number = (await pool.query(
-            "SELECT COUNT(*) as count_res FROM intervention"
-        )).rows[0].count_res
+        const totalNbInterventions: number = await this.getNbIntervention()
 
         const totalNbPage: number = Math.ceil(totalNbInterventions / nbElements)
         return totalNbPage
@@ -79,7 +89,8 @@ export default class Intervention {
         const interventionPage: IInterventionPage = {
             totalNbPage: await this.getNbPage(nbElements),
             currentPage: page,
-            nbElements: nbElements,
+            nbElementsPerPage: nbElements,
+            totalNbElement: await this.getNbIntervention(),
             pageElement: pageElement.rows
         }
         return interventionPage

@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {IPagination} from "../../lib/interface/pagination.interface";
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {IInterventionPage} from "../../lib/interface/pagination.interface";
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-intervention-list',
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 
 export class InterventionListComponent implements OnInit {
-  public pagination: IPagination;
+  public pagination: IInterventionPage;
   public page: string;
 
   private url: string = "http://localhost:5000/interventions/";
@@ -28,15 +28,16 @@ export class InterventionListComponent implements OnInit {
       params: {
         page: this.page
       }
-    }).subscribe((data: IPagination) => {
+    }).subscribe((data: IInterventionPage) => {
       if (data.currentPage.toString() !== this.page) {
-        this.router.navigate(['/intervention/', data.currentPage])
+        // this.router.navigate(['/intervention/', data.currentPage])
       }
       this.pagination = data;
     });
   }
 
   ngOnInit() {
+    console.log("OKOKOKko")
     this.getInterventionByPage();
   }
 }

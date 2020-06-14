@@ -16,9 +16,9 @@ export class InterventionListPaginationComponent implements OnInit {
 
 
   constructor(private router: Router) {
-    this.router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    };
+    // this.router.routeReuseStrategy.shouldReuseRoute = function () {
+    //   return false;
+    // };
   }
 
   ngOnInit(): void {
@@ -27,5 +27,4 @@ export class InterventionListPaginationComponent implements OnInit {
   public onPage(page: number) {
     this.router.navigate(['/intervention/', page])
   }
-
 }

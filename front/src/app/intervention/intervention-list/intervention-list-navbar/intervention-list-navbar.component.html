@@ -1,1 +1,10 @@
-<p>intervention-list-navbar works!</p>
+<div class="header">
+  <div class="grid1by2">
+    <app-intervention-list-counter class="left" [nbInterventions]="nbInterventions"></app-intervention-list-counter>
+    <app-intervention-list-range class="right hide-xs"></app-intervention-list-range>
+  </div>
+</div>
+<div>
+  <app-intervention-list-search></app-intervention-list-search>
+  <app-intervention-create-redirect-button></app-intervention-create-redirect-button>
+</div>

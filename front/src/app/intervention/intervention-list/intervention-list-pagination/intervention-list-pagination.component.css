@@ -32,9 +32,3 @@
 .icon {
   color: rgb(0, 0, 153)!important;
 }
-
-@media (max-width: 599px) {
-  .hide-xs {
-    display: none;
-  }
-}

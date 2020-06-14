@@ -20,17 +20,14 @@ import { InterventionListComponent } from "./intervention/intervention-list/inte
 import { InterventionListBodyComponent } from './intervention/intervention-list/intervention-list-body/intervention-list-body.component';
 import { InterventionListNavbarComponent } from './intervention/intervention-list/intervention-list-navbar/intervention-list-navbar.component';
 import { InterventionListPaginationComponent } from './intervention/intervention-list/intervention-list-pagination/intervention-list-pagination.component';
+import { InterventionListSearchComponent } from './intervention/intervention-list/intervention-list-search/intervention-list-search.component';
+import { InterventionListCounterComponent } from './intervention/intervention-list/intervention-list-counter/intervention-list-counter.component';
+import { InterventionCreateRedirectButtonComponent } from './intervention/intervention-create/intervention-create-redirect-button/intervention-create-redirect-button.component';
+import { InterventionListRangeComponent } from './intervention/intervention-list/intervention-list-range/intervention-list-range.component';
 
 const routes: Routes = [
-  {
-    path: 'intervention',
-    children: [
-      { path: ":page", component: InterventionListComponent },
-      { path: "create", component: InterventionCreateComponent },
-      { path: '', redirectTo: '1', pathMatch: 'full' }
-    ]
-  },
-  { path: '**', redirectTo: 'intervention/1' }
+  { path: "intervention/:page", component: InterventionListComponent },
+  { path: "intervention/create", component: InterventionCreateComponent }
 ];
 
 @NgModule({
@@ -41,7 +38,11 @@ const routes: Routes = [
     InterventionListComponent,
     InterventionListBodyComponent,
     InterventionListNavbarComponent,
-    InterventionListPaginationComponent
+    InterventionListPaginationComponent,
+    InterventionListSearchComponent,
+    InterventionListCounterComponent,
+    InterventionCreateRedirectButtonComponent,
+    InterventionListRangeComponent
   ],
   imports: [
     BrowserModule,

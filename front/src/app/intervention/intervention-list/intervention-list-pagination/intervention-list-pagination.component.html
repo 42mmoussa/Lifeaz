@@ -5,7 +5,7 @@
     class="pagination-button icon"
     color="primary"
     *ngIf="currentPage > 1"
-    (click)="onPage(currentPage - 1)"
+    [routerLink]="'/intervention/' + (currentPage - 1)"
   >
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
@@ -14,7 +14,7 @@
     mat-flat-button
     class="pagination-button hide-xs"
     *ngIf="currentPage > 2"
-    (click)="onPage(currentPage - 2)"
+    [routerLink]="'/intervention/' + (currentPage - 2)"
   >
     {{currentPage - 2}}
   </button>
@@ -23,7 +23,7 @@
     mat-flat-button
     class="pagination-button"
     *ngIf="currentPage > 1"
-    (click)="onPage(currentPage - 1)"
+    [routerLink]="'/intervention/' + (currentPage - 1)"
   >
     {{currentPage - 1}}
   </button>
@@ -40,7 +40,7 @@
     mat-flat-button
     class="pagination-button"
     *ngIf="currentPage < totalPages"
-    (click)="onPage(currentPage + 1)"
+    [routerLink]="'/intervention/' + (currentPage + 1)"
   >
     {{currentPage + 1}}
   </button>
@@ -49,7 +49,7 @@
     mat-flat-button
     class="pagination-button hide-xs"
     *ngIf="currentPage + 1 < totalPages"
-    (click)="onPage(currentPage + 2)"
+    [routerLink]="'/intervention/' + (currentPage + 2)"
   >
     {{currentPage + 2}}
   </button>
@@ -59,7 +59,7 @@
     class="pagination-button icon"
     color="primary"
     *ngIf="currentPage < totalPages"
-    (click)="onPage(currentPage + 1)"
+    [routerLink]="'/intervention/' + (currentPage + 1)"
   >
     <mat-icon>arrow_forward_ios</mat-icon>
   </button>

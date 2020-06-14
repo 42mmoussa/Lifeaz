@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-intervention-list-navbar',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterventionListNavbarComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public nbInterventions: number;
+
+  constructor() {}
 
   ngOnInit(): void {
   }

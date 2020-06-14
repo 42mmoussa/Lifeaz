@@ -1,8 +1,9 @@
 import {IIntervention} from './intervention.interface';
 
-export interface IPagination {
+export interface IInterventionPage {
   totalNbPage: number;
   currentPage: number;
-  nbElements: number;
-  pageElement: IIntervention[]
+  nbElementsPerPage: number;
+  totalNbElement: number;
+  pageElement: IIntervention[];
 }
