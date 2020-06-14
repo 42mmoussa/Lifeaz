@@ -8,21 +8,29 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { HttpClientModule } from "@angular/common/http";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { MatIconModule } from '@angular/material/icon';
 
+import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "./header/header.component";
 import { InterventionCreateComponent } from "./intervention/intervention-create/intervention-create.component";
 import { InterventionListComponent } from "./intervention/intervention-list/intervention-list.component";
-import { AppRoutingModule } from './app-routing.module';
 import { InterventionListBodyComponent } from './intervention/intervention-list/intervention-list-body/intervention-list-body.component';
 import { InterventionListNavbarComponent } from './intervention/intervention-list/intervention-list-navbar/intervention-list-navbar.component';
 import { InterventionListPaginationComponent } from './intervention/intervention-list/intervention-list-pagination/intervention-list-pagination.component';
 
 const routes: Routes = [
-  { path: 'intervention', component: InterventionListComponent },
-  { path: 'intervention/create', component: InterventionCreateComponent },
+  {
+    path: 'intervention',
+    children: [
+      { path: ":page", component: InterventionListComponent },
+      { path: "create", component: InterventionCreateComponent },
+      { path: '', redirectTo: '1', pathMatch: 'full' }
+    ]
+  },
+  { path: '**', redirectTo: 'intervention/1' }
 ];
 
 @NgModule({
@@ -47,6 +55,7 @@ const routes: Routes = [
     MatToolbarModule,
     HttpClientModule,
     MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

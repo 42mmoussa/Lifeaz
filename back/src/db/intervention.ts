@@ -13,7 +13,7 @@ export interface IIntervention {
 
 export interface IInterventionPage {
     totalNbPage: number
-    currentpage: number
+    currentPage: number
     nbElements: number
     pageElement: object[]
 }
@@ -78,7 +78,7 @@ export default class Intervention {
 
         const interventionPage: IInterventionPage = {
             totalNbPage: await this.getNbPage(nbElements),
-            currentpage: page,
+            currentPage: page,
             nbElements: nbElements,
             pageElement: pageElement.rows
         }

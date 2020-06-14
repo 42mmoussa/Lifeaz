@@ -1,4 +1,7 @@
-<div class="intervention-list">
+<div class="intervention-list" *ngIf="pagination">
   <app-intervention-list-body [interventions]="pagination.pageElement"></app-intervention-list-body>
-<!--<app-intervention-list-pagination [totalPages]="pagination.totalNbPage [currentPage]="pagination.currentPage"></app-intervention-list-pagination>-->
+  <app-intervention-list-pagination
+    [totalPages]="pagination.totalNbPage"
+    [currentPage]="pagination.currentPage"
+  ></app-intervention-list-pagination>
 </div>

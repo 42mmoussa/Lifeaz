@@ -23,9 +23,4 @@ export class InterventionListBodyComponent {
       this.durationinterventions.push(duration)
     }
   }
-
-  counter(i: number): number[] {
-    return new Array(i);
-  }
-
 }

@@ -1,1 +1,67 @@
-<p>intervention-list-pagination works!</p>
+<div class="container">
+
+  <button
+    mat-icon-button
+    class="pagination-button icon"
+    color="primary"
+    *ngIf="currentPage > 1"
+    (click)="onPage(currentPage - 1)"
+  >
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+  <button
+    mat-flat-button
+    class="pagination-button hide-xs"
+    *ngIf="currentPage > 2"
+    (click)="onPage(currentPage - 2)"
+  >
+    {{currentPage - 2}}
+  </button>
+
+  <button
+    mat-flat-button
+    class="pagination-button"
+    *ngIf="currentPage > 1"
+    (click)="onPage(currentPage - 1)"
+  >
+    {{currentPage - 1}}
+  </button>
+
+  <button
+    mat-raised-button
+    class="pagination-button current"
+    color="primary"
+  >
+    {{currentPage}}
+  </button>
+
+  <button
+    mat-flat-button
+    class="pagination-button"
+    *ngIf="currentPage < totalPages"
+    (click)="onPage(currentPage + 1)"
+  >
+    {{currentPage + 1}}
+  </button>
+
+  <button
+    mat-flat-button
+    class="pagination-button hide-xs"
+    *ngIf="currentPage + 1 < totalPages"
+    (click)="onPage(currentPage + 2)"
+  >
+    {{currentPage + 2}}
+  </button>
+
+  <button
+    mat-icon-button
+    class="pagination-button icon"
+    color="primary"
+    *ngIf="currentPage < totalPages"
+    (click)="onPage(currentPage + 1)"
+  >
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+
+</div>
