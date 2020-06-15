@@ -2,7 +2,7 @@ import {Router, Request, Response} from 'express'
 import InterventionDB, {IIntervention} from "../../db/intervention"
 import {sortWordsOfText} from "../utils/sort"
 import alphaIntervention from "../../db/alphaIntervention"
-import {validateEmail} from "../utils/validator"
+import {validateInterventionForm} from "../utils/validator"
 
 const router: Router = Router()
 
@@ -20,13 +20,9 @@ export default router.post('/', async (req: Request, res: Response) => {
     try {
         const {type, author, content, title, avatar, email}: { [key: string]: string } = req.body
 
-        if (!(type && author && content && title && avatar && email)) {
-            throw new Error("Error: Missing argument")
-        } else if (!validateEmail(email)) {
-            throw new Error("Error: Email format is not valid")
-        }
+        const validated = await validateInterventionForm(type, author, content, title, avatar, email)
 
-        const createdIntervention: IIntervention = await InterventionDB.create(type, author, content, title, avatar)
+        const createdIntervention: IIntervention = await InterventionDB.create(type.trim(), author.trim(), content.trim(), title.trim(), avatar.trim())
 
         const contentSorted: string = await sortWordsOfText(content)
         await alphaIntervention.create(createdIntervention.idintervention, contentSorted)

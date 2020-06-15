@@ -1,4 +1,4 @@
-import express, {Application, NextFunction, Request, Response} from "express";
+import express, {Application} from "express";
 import cors from "cors";
 
 import createInterventions from "./core/interventions/create";
@@ -17,6 +17,7 @@ app.use('/interventions', getInterventions);
 app.use('/interventions', createInterventions);
 
 app.listen(5000, async () => {
+    // init the database on the launch
     await initDB()
     console.log('Server running on port 5000')
 });

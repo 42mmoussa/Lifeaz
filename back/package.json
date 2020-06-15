@@ -4,7 +4,7 @@
   "description": "Test Technique Lifeaz",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register --watch-edtension ts test/**/*.test.ts || true",
+    "test": "mocha --require ts-node/register --watch-edtension ts test/**/*.test.ts",
     "start": "node dist/src/app.js",
     "dev": "nodemon src/app.ts",
     "build": "tsc -p ."
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "pg": "^8.2.1"
