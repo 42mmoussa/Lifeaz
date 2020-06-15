@@ -26,6 +26,8 @@ import { InterventionListRangeComponent } from './intervention-list/intervention
 import { InterventionListSearchComponent } from './intervention-list/intervention-list-search/intervention-list-search.component';
 import { InterventionCreateComponent } from './intervention-create/intervention-create.component';
 import { InterventionButtonComponent } from './intervention-button/intervention-button.component';
+import { InterventionCreateHeaderComponent } from './intervention-create/intervention-create-header/intervention-create-header.component';
+import { InterventionCreateFormComponent } from './intervention-create/intervention-create-form/intervention-create-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { InterventionButtonComponent } from './intervention-button/intervention-
     InterventionListRangeComponent,
     InterventionListSearchComponent,
     InterventionCreateComponent,
-    InterventionButtonComponent
+    InterventionButtonComponent,
+    InterventionCreateHeaderComponent,
+    InterventionCreateFormComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       { path: 'list/:page', component: InterventionListComponent },
       { path: 'create', component: InterventionCreateComponent },
-      { path: '', redirectTo: 'intervention/list/1', pathMatch: 'full' }
+      { path: '', redirectTo: 'list/1', pathMatch: 'full' }
     ]
   },
   { path: '**', redirectTo: 'intervention/list/1'}

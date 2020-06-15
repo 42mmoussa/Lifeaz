@@ -5,7 +5,8 @@
 
 .container {
   display: flex;
-  height: 800px;
+  height: max-content;
+  min-height: 600px;
   width: 100%;
 }
 
@@ -104,6 +105,7 @@
   vertical-align: middle;
   margin-left: 10px;
   font-weight: 600;
+  max-width: 200px;
 }
 
 .date {
@@ -122,4 +124,8 @@
 
 .bottom-grid > div {
   height: 100%;
+}
+
+p, h2 {
+  word-break: break-word;
 }

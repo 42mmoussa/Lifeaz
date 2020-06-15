@@ -17,3 +17,7 @@ body { margin: 0; }
     display: none!important;
   }
 }
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: rgba(50, 50, 50, 0.2);
+}

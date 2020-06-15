@@ -1,6 +1,6 @@
-import * as moment from 'moment'
+import * as moment from 'moment';
 
-export const getDateDiff = async (startDate: string): Promise<string> => {
+export const getDateDiff = (startDate: string): string => {
   const start: moment.Moment = moment(startDate);
   const end: moment.Moment = moment();
 
@@ -9,7 +9,7 @@ export const getDateDiff = async (startDate: string): Promise<string> => {
   const years: number = end.diff(start, 'years');
   if (years > 0) {
     text += years.toString();
-    text += 'an';
+    text += ' an';
     if (years > 1) {
       text += 's';
     }
@@ -19,14 +19,14 @@ export const getDateDiff = async (startDate: string): Promise<string> => {
   const months: number = end.diff(start, 'months');
   if (months > 0) {
     text += months.toString();
-    text += 'mois';
+    text += ' mois';
     return text;
   }
 
   const weeks: number = end.diff(start, 'weeks');
   if (weeks > 0) {
     text += weeks.toString();
-    text += 'semaine';
+    text += ' semaine';
     if (weeks > 1) {
       text += 's';
     }
@@ -36,7 +36,7 @@ export const getDateDiff = async (startDate: string): Promise<string> => {
   const days: number = end.diff(start, 'days');
   if (days > 0) {
     text += days.toString();
-    text += 'jour';
+    text += ' jour';
     if (days > 1) {
       text += 's';
     }
@@ -46,7 +46,7 @@ export const getDateDiff = async (startDate: string): Promise<string> => {
   const hours: number = end.diff(start, 'hours');
   if (hours > 0) {
     text += hours.toString();
-    text += 'heure';
+    text += ' heure';
     if (hours > 1) {
       text += 's';
     }

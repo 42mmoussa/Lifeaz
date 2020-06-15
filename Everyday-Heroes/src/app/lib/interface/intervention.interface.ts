@@ -6,4 +6,5 @@ export interface IIntervention {
   title: string;
   date: string;
   avatar: string;
+  email: string;
 }

@@ -26,11 +26,11 @@ services:
 
   front:
     volumes:
-      - ./front/:/app/
+      - ./Everyday-Heroes/:/app/
       - /app/node_modules
       - /app/dist
     restart: always
-    build: ./front/
+    build: ./Everyday-Heroes/
     image: front
     ports:
       - 4200:4200

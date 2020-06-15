@@ -12,15 +12,12 @@ export class InterventionListBodyComponent implements OnInit {
   @Input()
   public interventions: IIntervention[];
 
-  public durationinterventions: string[] = [];
+  @Input()
+  public durationInterventions: string[];
 
   constructor() {
   }
 
-  async ngOnInit(): Promise<void> {
-    for (const intervention of this.interventions) {
-      const duration = await getDateDiff(intervention.date);
-      this.durationinterventions.push(duration);
-    }
+  ngOnInit(): void {
   }
 }

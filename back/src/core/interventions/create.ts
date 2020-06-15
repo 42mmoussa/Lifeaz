@@ -31,7 +31,7 @@ export default router.post('/', async(req: Request, res: Response) => {
         const contentSorted: string = await sortWordsOfText(content)
         await alphaIntervention.create(createdIntervention.idintervention, contentSorted)
 
-        return res.status(200).send("Success")
+        return res.status(200).send("success")
     } catch (e) {
         return res.status(400).send(e.message)
     }

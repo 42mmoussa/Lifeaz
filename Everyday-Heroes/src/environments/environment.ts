@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    url: 'http://localhost:5000',
+    postIntervention: '/interventions',
+    getIntervention: '/interventions',
+  },
+  endpoints: {
+    intervention: {
+      list: 'intervention/list/',
+      create: 'intervention/create',
+    }
+  }
 };
 
 /*
