@@ -16,9 +16,9 @@ const router: Router = Router()
  * @query title
  * @query avatar
  */
-export default router.post('/', async(req: Request, res: Response) => {
+export default router.post('/', async (req: Request, res: Response) => {
     try {
-        const {type, author, content, title, avatar, email}: {[key: string]: string} = req.body
+        const {type, author, content, title, avatar, email}: { [key: string]: string } = req.body
 
         if (!(type && author && content && title && avatar && email)) {
             throw new Error("Error: Missing argument")

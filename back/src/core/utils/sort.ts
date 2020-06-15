@@ -11,7 +11,7 @@ export const sortWordsOfText = async (text: string): Promise<string> => {
         return ""
     }
 
-    const arrayWords: string[] = text.replace(/[,.*;:/!?]/g,'').split(" ")
+    const arrayWords: string[] = text.replace(/[,.*;:/!?]/g, '').split(" ")
     const sortedArray: string[] = arrayWords.sort(cmpWords)
 
     return sortedArray.join(" ") + "."

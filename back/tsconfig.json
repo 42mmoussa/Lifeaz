@@ -2,7 +2,7 @@
   "version": "3.7.5",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
     "lib": ["es5", "es6", "dom"],
     "target": "es6",
     "module": "CommonJS",

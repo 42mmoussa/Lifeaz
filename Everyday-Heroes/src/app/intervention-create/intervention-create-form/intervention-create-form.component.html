@@ -4,20 +4,6 @@
       <mat-icon color="primary" class="icon-chat material-icons-outlined">chat_outline</mat-icon><span class="aligned-with-icon">DÉCLARER UNE INTERVENTION</span>
     </div>
 
-    <p [class.valid]="!this.interventionForm.get('author').invalid">
-      <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
-        <mat-label>TON PRÉNOM</mat-label>
-        <input
-          matInput
-          formControlName="author"
-          maxlength="30"
-          required
-        >
-        <div class="mdc-text-field-helper-line"></div>
-        <mat-error *ngIf="this.interventionForm.get('author').invalid">{{getAuthorErrorMessage()}}</mat-error>
-      </mat-form-field>
-    </p>
-
     <p [class.valid]="!this.interventionForm.get('content').invalid">
       <mat-form-field appearance="legacy">
         <mat-label>QUE S'EST-IT PASSÉ ?</mat-label>
@@ -72,6 +58,20 @@
           required
         >
         <mat-error *ngIf="this.interventionForm.get('email').invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+
+    <p [class.valid]="!this.interventionForm.get('author').invalid">
+      <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+        <mat-label>TON PRÉNOM</mat-label>
+        <input
+          matInput
+          formControlName="author"
+          maxlength="30"
+          required
+        >
+        <div class="mdc-text-field-helper-line"></div>
+        <mat-error *ngIf="this.interventionForm.get('author').invalid">{{getAuthorErrorMessage()}}</mat-error>
       </mat-form-field>
     </p>
 

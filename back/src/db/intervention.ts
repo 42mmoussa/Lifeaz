@@ -78,7 +78,7 @@ export default class Intervention {
      *
      * @return Promise<IInterventionPage>
      */
-    static async getByPage({ page = 1, nbElements = 5 }: {page?:number, nbElements?:number}): Promise<IInterventionPage> {
+    static async getByPage({page = 1, nbElements = 5}: { page?: number, nbElements?: number }): Promise<IInterventionPage> {
         const offset = nbElements * (page - 1)
 
         const pageElement: Query = await pool.query(

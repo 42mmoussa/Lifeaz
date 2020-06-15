@@ -1,5 +1,5 @@
 import {Router, Request, Response} from 'express'
-import interventionDB, {IInterventionPage} from "../../db/intervention"
+import interventionDB, {IInterventionPage} from '../../db/intervention'
 
 const router: Router = Router()
 
@@ -13,7 +13,7 @@ const router: Router = Router()
  * example: domaine.com/inspections/?page=2&nb_element=10
  *
  */
-export default router.get('/', async(req: Request, res: Response) => {
+export default router.get('/', async (req: Request, res: Response) => {
     try {
         // get queries
         const page: number = Number(req.query.page)

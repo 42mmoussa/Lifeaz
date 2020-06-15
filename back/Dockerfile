@@ -10,3 +10,4 @@ RUN npm install nodemon -g
 COPY package.json .
 # Install all Packages
 RUN yarn
+RUN yarn build

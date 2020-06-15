@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Personne qui s'écroule dans la rue",
+        "content": "Je me baladais dans la rue pendant le week-end, quand tout à coup, un homme s'est écroulé juste devant moi dans la rue. J'ai donc vérifié sa conscience en l'interpellant, et sa respiration. Je l'ai ensuite placé en PLS et j'ai appelé les secours, qui l'ont emmené. J'espère qu'il va bien maintenant !",
+        "type": "Malaise Inconscient",
+        "author": "Camille",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2019-09-23 08:23:57"
+    }, {
+        "title": "Accident de la route mortel",
+        "content": "En revenant de vacances cet été, je suis arrivé sur une scène d'accident où une voiture avait percuté un tracteur et s'était retournée. J'étais le premier témoin sur les lieux, donc j'ai immédiatement appelé les pompiers après avoir balisé la route pour éviter que d'autres voitures ne viennent nous percuter. Le conducteur du tracteur allait bien, mais malheureusement le conducteur de la voiture était inconscient, et je ne pense pas qu'il s'en soit sorti... Il était coincé dans sa voiture et avait l'air de saigner. C'était difficile pour moi mais je suis content d'avoir eu la bonne réaction.",
+        "type": "Protéger et Alerter",
+        "author": "Bernard",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2019-08-07 22:17:06"
+    }, {
+        "title": "Accident de moto",
+        "content": "J'ai eu un accident de moto en patinant sur du verglas sur les petites routes. Je ne pouvais plus bouger la jambe, alors l'un de mes amis qui était avec moi m'a dit de ne pas bouger et a appelé les secours. Finalement, j'ai été opéré et ça va mieux, mais je fais plus attention sur la route !",
+        "type": "Traumatisme",
+        "author": "Charles",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2020-01-12 14:08:38"
+    }, {
+        "title": "Piqûre de serpent",
+        "content": "Au printemps, mon grand-père faisait du jardinage chez mes parents, et en arrachant des mauvaises herbes, il s'est fait mordre par une vipère qui était cachée là. Il n'avait pas très mal, mais par sécurité, on l'a emmené aux urgences où il est resté en observation pendant une nuit. Son bras avait gonflé mais heureusement, aucune séquelle !",
+        "type": "Été",
+        "author": "Pierre",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2018-05-17 10:12:48"
+    }, {
+        "title": "Brûlure culinaire",
+        "content": "Ma femme sortait un plat du four et elle s'est brûlée car elle n'avait pas mis des gants suffisamment épais. Comme elle avait des cloques, j'ai préféré appeler le SAMU pour savoir s'il fallait l'emmener, et ils m'ont dit de refroidir la brûlure avec de l'eau tempérée. Ensuite, on a laissé la brûlure à l'air libre et les cloques ont fini par se résorber après quelques jours. J'espère qu'on a agi correctement !",
+        "type": "Brûlure",
+        "author": "Yoan",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2019-12-06 02:48:29"
+    }, {
+        "title": "Coupure au mollet",
+        "content": "Mon père bricolait, et il s'est tailladé le mollet avec un morceau de verre qui traînait là. Nous n'étions pas sûr que son vaccin antitétanique soit à jour, donc j'ai préféré appeler le SAMU, qui l'ont emmené en observation et l'ont invité à renouveler son vaccin. Aujourd'hui, il est en pleine forme !",
+        "type": "Plaie",
+        "author": "Sara",
+        "avatar": "http://via.placeholder.com/300x300",
+        "date": "2020-01-02 23:00:12"
+    }
+]

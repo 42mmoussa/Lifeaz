@@ -21,7 +21,7 @@ services:
     image: back
     ports:
       - 5000:5000
-    entrypoint: "yarn dev"
+    entrypoint: "yarn start"
     working_dir: /app
 
   front:

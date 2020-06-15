@@ -1,4 +1,4 @@
-<div class="intervention-list" *ngIf="pagination">
+<div *ngIf="pagination">
   <app-intervention-list-navbar [nbInterventions]="pagination.totalNbElement"></app-intervention-list-navbar>
   <app-intervention-list-body
     [interventions]="pagination.pageElement"
