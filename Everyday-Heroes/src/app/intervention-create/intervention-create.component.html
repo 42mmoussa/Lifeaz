@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="box">
+    <div class="title">
+      <mat-icon color="primary" class="icon-chat">chat_bubble_outline</mat-icon><span class="aligned-with-icon">DÉCLARER UNE INTERVENTION</span>
+    </div>
+    <p [class.valid]="!content.invalid">
+      <mat-form-field appearance="legacy">
+        <mat-label>QUE S'EST-IT PASSÉ ?</mat-label>
+          <textarea
+            cdkTextareaAutosize
+            matInput
+            [formControl]="content"
+            #autosize="cdkTextareaAutosize"
+            maxlength="240"
+            minlength="40"
+            required
+          ></textarea>
+        <mat-error *ngIf="content.invalid">{{getContentErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p [class.valid]="!type.invalid">
+      <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+        <mat-label>TYPE D'INTERVENTION</mat-label>
+          <textarea
+            cdkTextareaAutosize
+            matInput
+            [formControl]="type"
+            maxlength="25"
+            required
+          ></textarea>
+        <mat-error *ngIf="type.invalid">{{getTypeErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p [class.valid]="!title.invalid">
+      <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+        <mat-label>DONNE UN TITRE À TON INTERVENTION</mat-label>
+        <input
+          matInput
+          maxlength="40"
+          [formControl]="title"
+          required
+        >
+        <mat-error *ngIf="title.invalid">{{getTitleErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p [class.valid]="!email.invalid">
+      <mat-form-field appearance="legacy" [hideRequiredMarker]="true">
+        <mat-label>TON E-MAIL</mat-label>
+        <input
+          matInput
+          [formControl]="email"
+          required
+        >
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <div class="submit-button">
+      <app-intervention-button class="right-sub-2">ENVOYER</app-intervention-button>
+    </div>
+  </div>
+</div>
