@@ -16,7 +16,7 @@ const router: Router = Router();
 export default router.get('/', async (req: Request, res: Response) => {
     try {
         // get queries
-        const page: number = Number(req.query.page);
+        const page = Number(req.query.page);
         const nbElement: number = req.query.nb_element && !isNaN(Number(req.query.nb_element)) ? Number(req.query.nb_element) : 5;
 
         // check if queries are set correctly in the url

@@ -13,7 +13,7 @@ const fillValues = async (posts: IIntervention[]) => {
     }
 };
 
-export const initDB = async () => {
+export const initDB = async (): Promise<void>  => {
     try {
         await pool.query('DROP TABLE IF EXISTS alpha_interventions;');
         await pool.query('DROP TABLE IF EXISTS intervention;');

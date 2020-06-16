@@ -20,7 +20,7 @@ export default router.post('/', async (req: Request, res: Response) => {
     try {
         const {type, author, content, title, avatar, email}: { [key: string]: string } = req.body;
 
-        const validated = await validateInterventionForm(type, author, content, title, avatar, email);
+        await validateInterventionForm(type, author, content, title, avatar, email);
 
         const createdIntervention: IIntervention = await InterventionDB.create(type.trim(), author.trim(), content.trim(), title.trim(), avatar.trim());
 
