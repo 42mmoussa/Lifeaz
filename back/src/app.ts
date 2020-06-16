@@ -18,6 +18,6 @@ app.use('/interventions', createInterventions);
 
 app.listen(5000, async () => {
     // init the database on the launch
-    await initDB()
-    console.log('Server running on port 5000')
+    await initDB();
+    console.log('Server running on port 5000');
 });

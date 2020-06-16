@@ -1,9 +1,9 @@
-import pool from "./Pool"
+import pool from './Pool'
 
 export interface IAlphaIntervention {
-    idalpha_interventions: number
-    idintervention: number
-    content: string
+    idalpha_interventions: number;
+    idintervention: number;
+    content: string;
 }
 
 /**
@@ -21,9 +21,9 @@ export default class AlphaIntervention {
      */
     static async create(idIntervention: number, content: string): Promise<IAlphaIntervention> {
         return (await pool.query(
-            "INSERT INTO alpha_interventions (idIntervention, content) VALUES ($1, $2) RETURNING *",
+            'INSERT INTO alpha_interventions (idIntervention, content) VALUES ($1, $2) RETURNING *',
             [idIntervention, content]
-        )).rows[0]
+        )).rows[0];
     }
 
     /**
@@ -33,7 +33,7 @@ export default class AlphaIntervention {
      */
     static async get(): Promise<IAlphaIntervention[]> {
         return (await pool.query(
-            "SELECT * from alpha_interventions"
-        )).rows
+            'SELECT * from alpha_interventions'
+        )).rows;
     }
 }
