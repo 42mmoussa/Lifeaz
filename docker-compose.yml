@@ -14,8 +14,8 @@ services:
   back:
     volumes:
       - ./back/:/app/
-#      - /app/node_modules
-#      - /app/dist
+      - /app/node_modules
+      - /app/dist
     restart: always
     build: ./back/
     image: back
@@ -27,8 +27,8 @@ services:
   front:
     volumes:
       - ./Everyday-Heroes/:/app/
-#      - /app/node_modules
-#      - /app/dist
+      - /app/node_modules
+      - /app/dist
     restart: always
     build: ./Everyday-Heroes/
     image: front
